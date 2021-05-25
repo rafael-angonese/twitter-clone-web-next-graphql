@@ -2,11 +2,16 @@
     "env": {
         "browser": true,
         "es2021": true,
-        "node": true
+        "node": true,
+        "jest": true
     },
     "extends": [
         "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:@typescript-eslint/recommendend",
+        "prettier/@typescript-eslint",
+        "prettier/airbnb",
+        "prettier/react"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -18,8 +23,12 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
+        "prettier/prettier": "error",
+        "space-before-function-paren": "off",
+        "react/prop-types": "off"
     }
 }
