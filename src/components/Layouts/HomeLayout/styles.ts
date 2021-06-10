@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { Twitter } from '../../styles/Icons';
+import { Twitter } from '../../../styles/Icons';
 
-import Button from '../Button';
+import Button from '../../Button';
 
 export const Container = styled.div`
     display: flex;
