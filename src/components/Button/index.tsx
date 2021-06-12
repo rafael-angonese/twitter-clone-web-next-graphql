@@ -1,27 +1,31 @@
-import styled from 'styled-components';
+import { FunctionComponent } from 'react';
+
+import { StyledButton, Spinner } from './styles';
 
 interface Props {
     outlined?: boolean;
+    loading?: boolean;
+    disabled?: boolean;
+    onClick?: () => void;
 }
 
-export default styled.button<Props>`
-    background: ${props => (props.outlined ? 'transparent' : 'var(--twitter)')};
-    color: ${props => (props.outlined ? 'var(--twitter)' : 'var(--white)')};
-    border: ${props => (props.outlined ? '1px solid var(--twitter)' : 'none')};
+const Button: FunctionComponent<Props> = ({
+    children,
+    loading,
+    disabled,
+    onClick,
+    ...rest
+}) => {
+    return (
+        <StyledButton
+            onClick={onClick}
+            disabled={disabled}
+            loading={loading}
+            {...rest}
+        >
+            {!loading ? children : <Spinner />}
+        </StyledButton>
+    );
+};
 
-    padding: 16px;
-    border-radius: 25px;
-
-    font-weight: bold;
-    font-size: 15px;
-
-    cursor: pointer;
-    outline: 0;
-
-    &:hover {
-        background: ${props =>
-            props.outlined
-                ? 'var(--twitter-dark-hover)'
-                : 'var(--twitter-light-hover)'};
-    }
-`;
+export default Button;

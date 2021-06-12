@@ -36,14 +36,13 @@ const SignupLayout: React.FC = () => {
         setLoading(true);
 
         try {
-            // await signup({
-            //     variables: data
-            // });
-            await new Promise(resolve => setTimeout(resolve, 2000));
+            await signup({
+                variables: data
+            });
 
             setLoading(false);
             toast.dark('💜 Conta registrada com sucesso!');
-            // Router.push('/signin');
+            Router.push('/signin');
         } catch (error) {
             setLoading(false);
         }
@@ -79,7 +78,9 @@ const SignupLayout: React.FC = () => {
                     onChange={event => setPassword(event.target.value)}
                 />
 
-                <SignupButton onClick={handleSignup}>Inscrever-se</SignupButton>
+                <SignupButton loading={loading} onClick={handleSignup}>
+                    Inscrever-se
+                </SignupButton>
             </Left>
 
             <Right>
