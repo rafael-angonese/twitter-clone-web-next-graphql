@@ -3,7 +3,14 @@ import Router from 'next/router';
 import { gql, useMutation } from '@apollo/client';
 import { toast } from 'react-toastify';
 
-import { Grid, Right, Left, TwitterIcon, SignupButton } from './styles';
+import {
+    Grid,
+    Right,
+    Left,
+    TwitterIcon,
+    SignupButton,
+    LoginButton
+} from './styles';
 import InputText from '../../Input/InputText';
 
 const createUser_MUTATION = gql`
@@ -84,11 +91,9 @@ const SignupLayout: React.FC = () => {
             </Left>
 
             <Right>
-                <h1>Entrar no Tuinter</h1>
+                <h1>Já possui uma conta?</h1>
 
-                <h4>
-                    Já possui uma conta? <a>Ir para o Login</a>{' '}
-                </h4>
+                <LoginButton outlined onClick={() => Router.push('/signin')}>Entrar</LoginButton>
             </Right>
         </Grid>
     );

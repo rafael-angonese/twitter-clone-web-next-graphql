@@ -50,3 +50,9 @@ export const SignupButton = styled(Button)`
     font-size: 15px;
     font-weight: bold
 `;
+
+export const LoginButton = styled(Button)`
+    margin-top: 20px;
+    width: 250px;
+    font-size: 15px;
+`;

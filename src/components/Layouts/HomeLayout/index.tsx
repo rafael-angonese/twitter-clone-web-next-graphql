@@ -30,7 +30,7 @@ const HomeLayout: React.FC = () => {
                 <SignupButton onClick={() => Router.push('/signup')}>
                     Inscrever-se
                 </SignupButton>
-                <LoginButton outlined onClick={() => Router.push('/login')}>
+                <LoginButton outlined onClick={() => Router.push('/signin')}>
                     Entrar
                 </LoginButton>
             </Body>
