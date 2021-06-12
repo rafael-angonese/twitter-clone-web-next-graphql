@@ -42,7 +42,7 @@ export const TwitterIcon = styled(Twitter)`
     height: 50px;
 `;
 
-export const SigninButton = styled(Button)`
+export const SignupButton = styled(Button)`
     margin: 10px;
     margin-top: 20px;
     /* width: 350px; */

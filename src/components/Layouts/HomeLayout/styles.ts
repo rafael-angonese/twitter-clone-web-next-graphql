@@ -31,7 +31,7 @@ export const Body = styled.div`
     }
 `;
 
-export const SigninButton = styled(Button)`
+export const SignupButton = styled(Button)`
     display: block;
     margin-bottom: 20px;
     width: 350px;

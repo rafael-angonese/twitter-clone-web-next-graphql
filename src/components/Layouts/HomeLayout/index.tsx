@@ -5,7 +5,7 @@ import {
     Container,
     Logo,
     Body,
-    SigninButton,
+    SignupButton,
     LoginButton,
     TwitterIcon
 } from './styles';
@@ -27,9 +27,9 @@ const HomeLayout: React.FC = () => {
                 <h1>Acontecendo agora</h1>
                 <h3>Inscreva-se no Tuinter hoje mesmo.</h3>
 
-                <SigninButton onClick={() => Router.push('/signin')}>
+                <SignupButton onClick={() => Router.push('/signup')}>
                     Inscrever-se
-                </SigninButton>
+                </SignupButton>
                 <LoginButton outlined onClick={() => Router.push('/login')}>
                     Entrar
                 </LoginButton>

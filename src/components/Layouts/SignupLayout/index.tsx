@@ -1,40 +1,50 @@
 import React, { useState } from 'react';
 import Router from 'next/router';
+import { gql, useMutation } from '@apollo/client';
+import { toast } from 'react-toastify';
 
-import { Grid, Right, Left, TwitterIcon, SigninButton } from './styles';
+import { Grid, Right, Left, TwitterIcon, SignupButton } from './styles';
 import InputText from '../../Input/InputText';
 
-const HomeLayout: React.FC = () => {
+const createUser_MUTATION = gql`
+    mutation createUser_MUTATION(
+        $name: String!
+        $email: String!
+        $password: String!
+    ) {
+        createUser(data: { name: $name, email: $email, password: $password }) {
+            id
+            name
+        }
+    }
+`;
+
+const SignupLayout: React.FC = () => {
     const [loading, setLoading] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleLogin = async () => {
+    const [signup] = useMutation(createUser_MUTATION);
+
+    const handleSignup = async () => {
         const data = {
             name: name,
             email: email,
             password: password
         };
-
-        console.log(data);
-
         setLoading(true);
 
         try {
-            // await axios.post('/register', data);
+            // await signup({
+            //     variables: data
+            // });
+            await new Promise(resolve => setTimeout(resolve, 2000));
 
             setLoading(false);
-
-            // toast({
-            //     title: 'Conta registrada com sucesso!',
-            //     status: 'success',
-            //     position: 'top-right',
-            //     isClosable: true
-            // });
-            Router.push('/home')
+            toast.dark('💜 Conta registrada com sucesso!');
+            // Router.push('/signin');
         } catch (error) {
-            console.log(error);
             setLoading(false);
         }
     };
@@ -69,7 +79,7 @@ const HomeLayout: React.FC = () => {
                     onChange={event => setPassword(event.target.value)}
                 />
 
-                <SigninButton onClick={handleLogin}>Inscrever-se</SigninButton>
+                <SignupButton onClick={handleSignup}>Inscrever-se</SignupButton>
             </Left>
 
             <Right>
@@ -83,4 +93,4 @@ const HomeLayout: React.FC = () => {
     );
 };
 
-export default HomeLayout;
+export default SignupLayout;
