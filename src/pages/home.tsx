@@ -1,11 +1,11 @@
-import Layout from '../components/Layout';
+import HomeLayout from '../components/Layouts/HomeLayout';
 
 import withAuth from '../utils/withAuth';
 
 const HomePage: React.FC = () => {
     return (
         <>
-            <Layout />
+            <HomeLayout />
         </>
     );
 };
