@@ -38,6 +38,10 @@ export const Avatar = styled.div`
     position: absolute;
     top: 0;
     left: 0;
+
+    img {
+        border-radius: 50%;
+    }
 `;
 export const Content = styled.div`
     display: flex;
@@ -94,6 +98,10 @@ export const ImageContent = styled.div`
     cursor: pointer;
     &:hover {
         opacity: 0.7;
+    }
+
+    img {
+        border-radius: 14px;
     }
 `;
 

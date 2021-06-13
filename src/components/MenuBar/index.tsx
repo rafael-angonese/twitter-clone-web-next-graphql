@@ -21,7 +21,6 @@ const MenuBar: React.FC = () => {
     return (
         <Container>
             <Topside>
-
                 <MenuButton>
                     <HomeIcon />
                     <span>Página Inicial</span>
@@ -53,7 +52,13 @@ const MenuBar: React.FC = () => {
             </Topside>
 
             <Botside>
-                <Avatar />
+                <Avatar>
+                    <img
+                        height="100%"
+                        width="100%"
+                        src="https://github.com/rafael-angonese.png"
+                    />
+                </Avatar>
 
                 <ProfileData>
                     <strong>Rafael Angonese</strong>

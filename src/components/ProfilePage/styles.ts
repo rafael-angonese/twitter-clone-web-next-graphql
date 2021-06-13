@@ -38,6 +38,10 @@ export const Avatar = styled.div`
     position: absolute;
     bottom: max(-60px, -10vw);
     left: 15px;
+
+    img {
+        border-radius: 50%;
+    }
 `;
 
 export const ProfileData = styled.div`

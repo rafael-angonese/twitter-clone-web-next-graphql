@@ -19,12 +19,16 @@ import {
 const Tweet: React.FC = () => {
     return (
         <Container>
-            <Retweeted>
-                Você retweetou
-            </Retweeted>
+            <Retweeted>Você retweetou</Retweeted>
 
             <Body>
-                <Avatar />
+                <Avatar>
+                    <img
+                        height="100%"
+                        width="100%"
+                        src="https://github.com/rafael-angonese.png"
+                    />
+                </Avatar>
 
                 <Content>
                     <Header>
@@ -37,16 +41,20 @@ const Tweet: React.FC = () => {
                     {/* eslint-disable-next-line jsx-a11y/accessible-emoji */}
                     <Description>Foguete não tem ré 🚀</Description>
 
-                    <ImageContent />
+                    <ImageContent>
+                        <img
+                            height="100%"
+                            width="100%"
+                            src="https://github.com/rafael-angonese.png"
+                        />
+                    </ImageContent>
 
                     <Icons>
                         <Status>
                             <CommentIcon />
                             18
                         </Status>
-                        <Status>
-                            18
-                        </Status>
+                        <Status>18</Status>
                         <Status>
                             <LikeIcon />
                             999

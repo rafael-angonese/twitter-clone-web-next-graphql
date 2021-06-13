@@ -17,7 +17,18 @@ const ProfilePage: React.FC = () => {
     return (
         <Container>
             <Banner>
-                <Avatar />
+                <img
+                    height="100%"
+                    width="100%"
+                    src="https://pbs.twimg.com/profile_banners/3272161362/1614726812/1500x500"
+                />
+                <Avatar>
+                    <img
+                        height="100%"
+                        width="100%"
+                        src="https://github.com/rafael-angonese.png"
+                    />
+                </Avatar>
             </Banner>
 
             <ProfileData>

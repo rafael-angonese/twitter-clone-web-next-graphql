@@ -142,6 +142,10 @@ export const Avatar = styled.div`
 
     border-radius: 50%;
     background: var(--gray);
+
+    img {
+        border-radius: 50%;
+    }
 `;
 
 export const ProfileData = styled.div`
