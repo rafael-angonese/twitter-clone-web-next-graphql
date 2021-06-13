@@ -4,7 +4,7 @@ import { StyledButton, Spinner } from './styles';
 
 interface Props {
     outlined?: boolean;
-    loading?: boolean;
+    loading?: number;
     disabled?: boolean;
     onClick?: () => void;
 }
@@ -20,7 +20,7 @@ const Button: FunctionComponent<Props> = ({
         <StyledButton
             onClick={onClick}
             disabled={disabled}
-            loading={loading}
+            loading={loading ? 1 : 0}
             {...rest}
         >
             {!loading ? children : <Spinner />}

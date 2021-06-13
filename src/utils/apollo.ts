@@ -14,7 +14,7 @@ const httpLink = createHttpLink({
 const errorLink = onError(({ graphQLErrors, networkError }) => {
     if (graphQLErrors) {
         graphQLErrors.forEach(error => {
-            error?.extensions?.exception?.response?.message.forEach(
+            error?.extensions?.exception?.response?.message?.forEach(
                 (message: String) => {
                     toast.error(`🥺 ${message}`);
                 }

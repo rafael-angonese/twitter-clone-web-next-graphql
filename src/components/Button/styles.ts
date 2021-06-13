@@ -2,7 +2,7 @@ import styled, { css, keyframes } from 'styled-components';
 
 interface Props {
     outlined?: boolean;
-    loading?: boolean;
+    loading?: number;
     disabled?: boolean;
     onClick?: () => void;
 }

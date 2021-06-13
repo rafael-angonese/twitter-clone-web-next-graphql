@@ -25,7 +25,7 @@ const HomeLayout: React.FC = () => {
                 <TwitterIcon />
 
                 <h1>Acontecendo agora</h1>
-                <h3>Inscreva-se no Tuinter hoje mesmo.</h3>
+                <h3>Inscreva-se no Twitter hoje mesmo.</h3>
 
                 <SignupButton onClick={() => Router.push('/signup')}>
                     Inscrever-se

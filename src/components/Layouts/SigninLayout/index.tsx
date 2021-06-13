@@ -13,43 +13,44 @@ import {
 } from './styles';
 import InputText from '../../Input/InputText';
 
-const createUser_MUTATION = gql`
-    mutation createUser_MUTATION(
-        $name: String!
-        $email: String!
-        $password: String!
-    ) {
-        createUser(data: { name: $name, email: $email, password: $password }) {
-            id
-            name
+const login_MUTATION = gql`
+    mutation login_MUTATION($email: String!, $password: String!) {
+        login(data: { email: $email, password: $password }) {
+            token
+            user {
+                id
+                name
+                email
+            }
         }
     }
 `;
 
-const SignupLayout: React.FC = () => {
+const SigninLayout: React.FC = () => {
     const [loading, setLoading] = useState(false);
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('rafael.lala@gmail.com');
+    const [password, setPassword] = useState('132456');
 
-    const [signup] = useMutation(createUser_MUTATION);
+    const [login] = useMutation(login_MUTATION);
 
-    const handleSignup = async () => {
+    const handleSignin = async () => {
         const data = {
-            name: name,
             email: email,
             password: password
         };
         setLoading(true);
 
         try {
-            await signup({
+            const response = await login({
                 variables: data
             });
 
+            console.log(response.data.login.user);
+            console.log(response.data.login.token);
+
             setLoading(false);
-            toast.dark('💜 Conta registrada com sucesso!');
-            Router.push('/signin');
+            toast.dark('💜 Login realizado com sucesso!');
+            // Router.push('/home');
         } catch (error) {
             setLoading(false);
         }
@@ -58,16 +59,17 @@ const SignupLayout: React.FC = () => {
     return (
         <Grid>
             <Left>
-                <TwitterIcon />
-                <h1>Criar sua conta</h1>
+                <h1>Inscrever-se no Twitter?</h1>
 
-                <InputText
-                    required
-                    label="Nome"
-                    value={name}
-                    setValue={setName}
-                    onChange={event => setName(event.target.value)}
-                />
+                <LoginButton outlined onClick={() => Router.push('/signup')}>
+                    Inscrever-se
+                </LoginButton>
+            </Left>
+
+            <Right>
+                <TwitterIcon />
+                <h1>Entrar no Twitter</h1>
+
                 <InputText
                     required
                     label="E-mail"
@@ -85,20 +87,12 @@ const SignupLayout: React.FC = () => {
                     onChange={event => setPassword(event.target.value)}
                 />
 
-                <SignupButton loading={loading ? 1 : 0} onClick={handleSignup}>
-                    Inscrever-se
-                </SignupButton>
-            </Left>
-
-            <Right>
-                <h1>Já possui uma conta?</h1>
-
-                <LoginButton outlined onClick={() => Router.push('/signin')}>
+                <SignupButton loading={loading ? 1 : 0} onClick={handleSignin}>
                     Entrar
-                </LoginButton>
+                </SignupButton>
             </Right>
         </Grid>
     );
 };
 
-export default SignupLayout;
+export default SigninLayout;
