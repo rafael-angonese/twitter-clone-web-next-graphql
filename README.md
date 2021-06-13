@@ -1,34 +1,56 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<p align="center">
+  <img alt="index" src=".github/index.PNG" width="99%">
+</p>
 
-## Getting Started
+<p  align="center">
+    <img alt="register" src=".github/signin.PNG" width="49%">
+    <img alt="register" src=".github/signup.PNG" width="49%">
+</p>
 
-First, run the development server:
+<p align="center">
+    <img alt="channels" src=".github/home.PNG" width="99%">
+</p>
+
+## ✨ Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+-   [Nextjs](https://nextjs.org/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [Styled-components](https://styled-components.com/)
+-   [Graphql](https://graphql.org/)
+-   [Apollo Graphql](https://www.apollographql.com/)
+-   ... e outros
+
+## 💻 Projeto
+
+A estrutura inicial foi feita com base no projeto da Rocketseat [UI Clone - Twitter Responsive](https://github.com/rocketseat-content/youtube-clone-twitter) feito pelo [Guilherme Rodz](https://github.com/guilhermerodz)
+
+Este projeto é um clone simplificado do Twitter, ele tem como objetivo aplicar algumas tecnologias de forma prática.
+
+## Ambiente de desenvolvimento
 
 ```bash
-npm run dev
-# or
-yarn dev
+node --version
+v16.0.0
+
+yarn --version
+1.22.4
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Como executar
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+-   Clone o repositório
+-   Instale as dependências com `yarn`
+-   Inicie o servidor com `yarn dev`
+-   A aplicação pode ser acessada em [`localhost:3333`](http://localhost:3333).
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+-   Execute o Back-end que está [aqui](https://github.com/rafael-angonese/twitter-clone-api-nest-graphql)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📄 Licença
 
-## Learn More
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Feito com ♥ by Rafael Angonese
