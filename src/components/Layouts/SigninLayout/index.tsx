@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Router from 'next/router';
 import { gql, useMutation } from '@apollo/client';
 import { toast } from 'react-toastify';
+
+import AuthContext from '../../../contexts/AuthContext';
 
 import {
     Grid,
@@ -12,6 +14,12 @@ import {
     LoginButton
 } from './styles';
 import InputText from '../../Input/InputText';
+
+interface User {
+    id: number;
+    name: string;
+    email: string;
+}
 
 const login_MUTATION = gql`
     mutation login_MUTATION($email: String!, $password: String!) {
@@ -27,6 +35,8 @@ const login_MUTATION = gql`
 `;
 
 const SigninLayout: React.FC = () => {
+    const { setAuth } = useContext(AuthContext);
+
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState('rafael.lala@gmail.com');
     const [password, setPassword] = useState('132456');
@@ -45,12 +55,14 @@ const SigninLayout: React.FC = () => {
                 variables: data
             });
 
-            console.log(response.data.login.user);
-            console.log(response.data.login.token);
+            await setAuth(
+                response.data.login.token,
+                response.data.login.user as User
+            );
 
             setLoading(false);
             toast.dark('💜 Login realizado com sucesso!');
-            // Router.push('/home');
+            Router.push('/home');
         } catch (error) {
             setLoading(false);
         }
